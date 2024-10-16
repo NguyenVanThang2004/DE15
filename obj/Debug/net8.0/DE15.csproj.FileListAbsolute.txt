@@ -143,3 +143,4 @@ E:\C\LAP_TRINH_WEB\DE15\obj\Debug\net8.0\refint\DE15.dll
 E:\C\LAP_TRINH_WEB\DE15\obj\Debug\net8.0\DE15.pdb
 E:\C\LAP_TRINH_WEB\DE15\obj\Debug\net8.0\DE15.genruntimeconfig.cache
 E:\C\LAP_TRINH_WEB\DE15\obj\Debug\net8.0\ref\DE15.dll
+E:\C\LAP_TRINH_WEB\DE15\obj\Debug\net8.0\DE15.sourcelink.json
