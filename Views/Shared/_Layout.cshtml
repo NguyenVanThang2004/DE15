@@ -92,44 +92,7 @@
     <!-- Header bottom -->
     <div class="header__bottom container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
-            <div class="col-3 position-relative d-none d-lg-block">
-                <a class="navbar-category-wrap btn d-flex justify-content-between align-items-center bg-primary"
-                   data-bs-toggle="collapse" data-bs-target="#collapseNavbar" aria-expanded="false" aria-controls="collapseNavbar">
-                    <h6>
-                        <i class="fas fa-bars me-2"></i>
-                        Danh mục
-                    </h6>
-                    <i class="fas fa-angle-down"></i>
-                </a>
-                <nav class="navbar-category navbar-light bg-light position-absolute collapse" id="collapseNavbar">
-                    <div class="navbar-nav w-100">
-                        <div class="nav-item dropend">
-                            <a href="#" class="dropend-toggle nav-link d-flex align-items-center justify-content-between w-100" data-bs-toggle="dropdown" aria-expanded="false">
-                                Áo
-                                <i class="fas fa-angle-right"></i>
-                            </a>
-                            <div class="dropdown-menu rounded-0 border-0">
-                                <a class="dropdown-item" href="#">Áo sơ mi</a>
-                                <a class="dropdown-item" href="#">Áo polo</a>
-                                <a class="dropdown-item" href="#">Áo thun</a>
-                                <a class="dropdown-item" href="#">Áo ba lỗ</a>
-                            </div>
-                        </div>
-                        <div class="nav-item dropend">
-                            <a href="#" class="nav-link d-flex align-items-center justify-content-between w-100" data-bs-toggle="dropdown" aria-expanded="false">
-                                Quần
-                                <i class="fas fa-angle-right"></i>
-                            </a>
-                            <div class="dropdown-menu rounded-0 border-0">
-                                <a class="dropdown-item" href="#">Quần âu</a>
-                                <a class="dropdown-item" href="#">Quần bò</a>
-                                <a class="dropdown-item" href="#">Quần đùi</a>
-                            </div>
-                        </div>
-                        <a href="#" class="nav-item nav-link">Phụ kiện</a>
-                    </div>
-                </nav>
-            </div>
+           @await Component.InvokeAsync("LoaiSachMenu");
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 py-lg-0 h-100">
                     <a href="#" class="logo d-md-block d-lg-none">

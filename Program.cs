@@ -1,7 +1,16 @@
+using DE15.Models;
+using DE15.Repository;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = builder.Configuration.GetConnectionString("QlthuVienContext");
+builder.Services.AddDbContext<QlthuVienContext>(x => x.UseSqlServer(connectionString));
+builder.Services.AddScoped<ILoaiSpRepository, LoaiSpRepository>();
+
 
 var app = builder.Build();
 
