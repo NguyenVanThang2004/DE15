@@ -9,6 +9,7 @@
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../assets/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
@@ -23,6 +24,83 @@
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/index.css">
+
+    <style>
+
+        .product-item {
+            height: 100%; /* Đảm bảo tất cả các sản phẩm chiếm toàn bộ chiều cao của khối cha */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Đảm bảo nội dung bên trong cách đều nhau */
+        }
+
+        .product-img {
+            height: 250px; /* Đặt chiều cao cố định cho phần chứa hình ảnh */
+            overflow: hidden; /* Ẩn phần tràn ra ngoài */
+        }
+
+            .product-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Đảm bảo hình ảnh vừa khung mà không bị méo */
+            }
+
+        .product-info {
+            padding: 15px;
+            background-color: #fff;
+            flex-grow: 1; /* Đảm bảo phần mô tả sản phẩm chiếm hết khoảng trống còn lại */
+            text-align: center;
+        }
+
+        .product-info__name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .product-info h5, .product-info h6 {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .product-action {
+            text-align: center;
+        }
+
+            .product-action a {
+                margin: 5px;
+            }
+
+        .d-flex {
+            display: flex;
+        }
+
+            .d-flex.align-items-center {
+                align-items: center;
+            }
+
+            .d-flex.justify-content-center {
+                justify-content: center;
+            }
+
+        .text-muted {
+            color: #6c757d !important;
+        }
+
+        .text-primary {
+            color: #ffd333 !important;
+        }
+
+        .text-decoration-line-through {
+            text-decoration: line-through;
+        }
+
+
+    </style>
+
 </head>
 <body>
     <!-- Header top -->
@@ -92,7 +170,26 @@
     <!-- Header bottom -->
     <div class="header__bottom container-fluid bg-dark mb-30">
         <div class="row px-xl-5">
-           @await Component.InvokeAsync("LoaiSachMenu");
+            <div class="col-3 position-relative d-none d-lg-block">
+                <a class="navbar-category-wrap btn d-flex justify-content-between align-items-center bg-primary"
+                   data-bs-toggle="collapse" data-bs-target="#collapseNavbar" aria-expanded="false" aria-controls="collapseNavbar">
+                    <h6>
+                        <i class="fas fa-bars me-2"></i>
+                        Danh mục
+                    </h6>
+                    <i class="fas fa-angle-down"></i>
+                </a>
+                <nav class="navbar-category navbar-light bg-light position-absolute collapse" id="collapseNavbar">
+                    <div class="navbar-nav w-100">
+                        <div class="nav-item dropend">
+                          
+
+           @await Component.InvokeAsync("LoaiSachMenu")
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 py-lg-0 h-100">
                     <a href="#" class="logo d-md-block d-lg-none">
@@ -385,13 +482,8 @@
         <h2 class="title position-relative text-dark text-uppercase mx-xl-5 mb-4">
             <span class="bg-secondary pe-3">Featured products</span>
         </h2>
-        <div class="row px-xl-5">
-           
-            
-           
+        <div id="displayProducts" class="row px-xl-5">
             @RenderBody()
-           
-            
         </div>
     </div>
     <!-- Big banner -->
@@ -767,9 +859,12 @@
     <script src="../assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
     <!-- Jquery -->
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Owl Carousel -->
     <script src="../assets/js/owl.carousel.min.js"></script>
     <!-- Script -->
     <script src="../assets/js/index.js"></script>
 </body>
 </html>
+
+script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
