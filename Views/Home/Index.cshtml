@@ -88,7 +88,9 @@
 
 </style>
 
-
+<p>
+    @TempData["Message"]
+</p>
 @foreach(var item in Model)
 {
 
@@ -98,7 +100,7 @@
             <div class="product-img">
                 <img class="w-100" src="@Url.Content("../ProductImages/Sach/"+item.FileAnh)">
                 <div class="product-action">
-                    <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="fa fa-shopping-cart"></i></a>
+                    <a class="btn btn-outline-dark btn-square rounded-0" ><i class="fa fa-shopping-cart"></i></a>
                     <a class="btn btn-outline-dark btn-square rounded-0" href="#"><i class="far fa-heart"></i></a>
                 </div>
             </div>
@@ -106,7 +108,10 @@
                 <a class="product-info__name" href="#">@item.TenSach</a>
                 <div class="d-flex align-items-center justify-content-center mt-2">
                     <h5>@item.GiaTriSach</h5>
-                    <h6 class="text-muted ms-2 text-decoration-line-through">@item.GiaTriSach</h6>
+                    <h6 class="text-muted ms-2 text-decoration-line-through">@item.GiaTriSach</h6> <br />
+                    <a asp-action="ThemSanPhamMoi">Them</a> <br />
+                    <a asp-action="SuaSanPham" asp-route-maSach="@item.MaSach">Sửa</a> <br />
+                    <a asp-action="XoaSanPham" asp-route-maSach="@item.MaSach">Xóa</a> <br />
                 </div>
                 <div class="d-flex align-items-center justify-content-center mb-1">
                     <small class="fa fa-star text-primary me-1"></small>
@@ -120,7 +125,10 @@
         </div>
     </div>
 
+
 }
+
+
 
 <div class="product__pagination">
     @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
